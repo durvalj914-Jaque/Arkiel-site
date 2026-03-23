@@ -136,17 +136,57 @@
     .footer-links a:hover { color: var(--white40); }
     .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.15); }
 
-    @media (max-width: 900px) {
-      nav { padding: 0 24px; }
-      .product-hero { padding: 100px 24px 60px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; background: rgba(8,8,16,0.98); backdrop-filter: blur(20px); padding: 24px; flex-direction: column; gap: 4px; border-bottom: 1px solid rgba(139,92,246,0.12); z-index: 998; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.2s; }
+    .mobile-menu a:hover { color: #fff; }
+    .mobile-menu a:last-child { border-bottom: none; color: #a78bfa; }
+
+    /* TABLET */
+    @media (max-width: 1024px) {
+      nav { padding: 0 32px; }
+      .product-hero { padding: 110px 32px 70px; }
+      .hero-inner { gap: 50px; }
+      .product-img-hero { width: 280px; height: 280px; }
+      section { padding: 80px 32px; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .diff-grid { grid-template-columns: 1fr; gap: 44px; }
+      footer { padding: 32px; }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; height: 64px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { top: 64px; }
+
+      .product-hero { padding: 90px 20px 60px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
       .hero-right { order: -1; }
-      .product-img-hero { width: 220px; height: 220px; }
-      section { padding: 70px 24px; }
+      .product-img-hero { width: 200px; height: 200px; }
+      .back-link { justify-content: center; }
+      .hero-buttons { justify-content: center; flex-direction: column; align-items: center; }
+      .btn-whatsapp, .btn-primary { width: 100%; max-width: 320px; justify-content: center; }
+
+      section { padding: 60px 20px; }
       .features-grid { grid-template-columns: 1fr; }
-      .diff-grid { grid-template-columns: 1fr; gap: 40px; }
-      .cta-box { padding: 40px 24px; }
-      footer { padding: 24px; flex-direction: column; text-align: center; }
+      .diff-grid { grid-template-columns: 1fr; gap: 36px; }
+      .diff-item { gap: 14px; }
+      .cta-box { padding: 36px 20px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .cta-buttons a { width: 100%; max-width: 320px; justify-content: center; }
+      footer { padding: 28px 20px 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+
+    @media (max-width: 400px) {
+      .product-hero-title { font-size: 3rem; }
     }
   </style>
 </head>
@@ -163,7 +203,15 @@
       <li><a href="index.html#sobre">Sobre</a></li>
       <li><a href="index.html#contato" class="nav-cta">Fale Conosco</a></li>
     </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#inicio" onclick="closeMenu()">Início</a>
+    <a href="index.html#produtos" onclick="closeMenu()">Produtos</a>
+    <a href="index.html#sobre" onclick="closeMenu()">Sobre</a>
+    <a href="index.html#contato" onclick="closeMenu()">Fale Conosco</a>
+  </div>
 
   <!-- HERO -->
   <div class="product-hero">
@@ -322,5 +370,15 @@
     <div class="footer-copy">© 2025 Arkiel Tecnologia.</div>
   </footer>
 
+  <script>
+    function toggleMenu() {
+      document.getElementById('hamburger').classList.toggle('open');
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+    function closeMenu() {
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+  </script>
 </body>
 </html>

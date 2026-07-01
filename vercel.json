@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/api/webhook", "destination": "https://assistente-ark.vercel.app/api/webhook" },
+    { "source": "/admin", "destination": "https://assistente-ark.vercel.app/admin" },
+    { "source": "/admin/:path*", "destination": "https://assistente-ark.vercel.app/admin/:path*" },
+    { "source": "/login", "destination": "https://assistente-ark.vercel.app/login" },
+    { "source": "/_next/:path*", "destination": "https://assistente-ark.vercel.app/_next/:path*" }
+  ]
+}

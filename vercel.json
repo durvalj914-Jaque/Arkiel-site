@@ -13,6 +13,14 @@
       "destination": "https://assistente-ark.vercel.app/admin/:path*"
     },
     {
+      "source": "/painel",
+      "destination": "https://assistente-ark.vercel.app/painel"
+    },
+    {
+      "source": "/client",
+      "destination": "https://assistente-ark.vercel.app/client"
+    },
+    {
       "source": "/login",
       "destination": "https://assistente-ark.vercel.app/login"
     },
@@ -23,6 +31,30 @@
     {
       "source": "/api/v1/:path*",
       "destination": "https://assistente-ark.vercel.app/api/v1/:path*"
+    },
+    {
+      "source": "/api/admin/:path*",
+      "destination": "https://assistente-ark.vercel.app/api/admin/:path*"
+    },
+    {
+      "source": "/api/push/:path*",
+      "destination": "https://assistente-ark.vercel.app/api/push/:path*"
+    },
+    {
+      "source": "/api/whatsapp/:path*",
+      "destination": "https://assistente-ark.vercel.app/api/whatsapp/:path*"
+    },
+    {
+      "source": "/api/generate-flow",
+      "destination": "https://assistente-ark.vercel.app/api/generate-flow"
+    },
+    {
+      "source": "/api/send-message",
+      "destination": "https://assistente-ark.vercel.app/api/send-message"
+    },
+    {
+      "source": "/api/toggle-mode",
+      "destination": "https://assistente-ark.vercel.app/api/toggle-mode"
     }
   ]
 }

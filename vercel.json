@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/sw.js",
+      "destination": "https://assistente-ark.vercel.app/sw.js"
+    },
+    {
+      "source": "/manifest.json",
+      "destination": "https://assistente-ark.vercel.app/manifest.json"
+    },
+    {
       "source": "/api/webhook",
       "destination": "https://assistente-ark.vercel.app/api/webhook"
     },

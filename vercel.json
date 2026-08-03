@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/assistente-ark-icon.png",
+      "destination": "https://assistente-ark.vercel.app/assistente-ark-icon.png"
+    },
+    {
       "source": "/assistente-ark-logo.png",
       "destination": "https://assistente-ark.vercel.app/assistente-ark-logo.png"
     },
